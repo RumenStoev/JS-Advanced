@@ -1,0 +1,27 @@
+function solve(arg1,arg2,arg3) {
+      let sumLength;
+      let averageLenght;
+       sumLength=arg1.length + arg2.length + arg3.length;
+       averageLenght=Math.floor(sumLength/3)
+    console.log(sumLength)
+    console.log(averageLenght)
+}
+
+solve('chocolate','ice cream','cake')
+solve('pasta','5','22.3')
+
+
+//Another way
+
+function solve2(...params) {
+       let sum = params.reduce((a,b)=> a+b.length,0)
+       let avarage = Math.floor(sum/ params.length);
+
+
+
+       return [sum,avarage]
+}
+
+
+console.log(solve2('chocolate','ice cream','cake').join("\n"));
+console.log(solve2('pasta','5','22.3').join("\n"));
