@@ -1,0 +1,31 @@
+function solve(str) {
+    let data = str.match(/\w+/gim);
+    let obj = {};
+    for(let i = 0; i < data.length; i++) {
+        if(typeof obj[data[i]] === "undefined") {
+            obj[data[i]] = 0;
+        }
+        obj[data[i]]++
+    }
+
+    return obj;
+
+}
+
+
+console.log(
+    solve("Js devs use Node.js for \n server side JS.--JS for devs")
+)
+
+
+->{
+  Js: 1,
+  devs: 2,
+  use: 1,
+  Node: 1,
+  js: 1,
+  for: 2,
+  server: 1,
+  side: 1,
+  JS: 2
+}
