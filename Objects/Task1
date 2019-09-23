@@ -1,1 +1,28 @@
 
+//Example objects constructions
+
+let person = {
+    firstName: "John",
+    lastName: "Doe",
+    method: function() {
+        return this.firstName + " " + this.lastName;
+    }
+}
+
+console.log(person.method())
+->John Doe
+
+//Different example with objects constructions
+let name = {
+    firstName: "John",
+    lastName: "Doe",
+    method: ()=> {
+        return this.firstName + this.lastName;
+    }
+}
+
+console.log(name.method())
+-> NaN
+
+
+//This example is for different between /method:function() and ()=>/
