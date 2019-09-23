@@ -26,3 +26,5 @@ console.log(name.method())
 
 
 //This example is for different between /method:function() and ()=>/
+
+//  this in JS have a context
