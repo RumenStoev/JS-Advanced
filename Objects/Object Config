@@ -1,0 +1,49 @@
+Methods Object.constructor
+
+1.Object.freeze()
+
+let cat = {name: "Tom", age: 5};
+   Object.freeze(cat)
+   
+   cat.age =10 //Error!!!
+   console.log(cat.age)
+   -> 5;
+   
+ 
+2.Object.seal()
+ 
+  let person = {name: "John" ,age: 20};
+  person.age = 30;
+  console.log(person.age)
+  -> 30;  //We can change  the value,but not a property!!!
+
+
+3.Object.defineProperty()
+
+
+let obj = {}
+Object.defineProperty(obj,"name",{ writable:false, value:"Mickel"})
+ console.log(obj.name)
+ ->John;
+ obj.name= "John" //Error!!!
+ 
+ 
+ 
+ 4. For in and For of
+ 
+let numberObject = {a:1,b:2,c:3,d:4}
+
+    for(let key in numberObject) {
+    console.log(key)
+    }
+    for(let i of Object.keys(numberObject))
+    for(let i of Object.values(numberObject))
+    
+    
+    //The different between of and in 
+    
+   
+ 
+ 
+ 
+ 
