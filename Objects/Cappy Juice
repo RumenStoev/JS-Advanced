@@ -1,0 +1,37 @@
+function cappy(input) {
+  let juices = {}
+  let bottles = {}
+
+  
+   input.forEach((x)=> {
+     let [name,quality] = x.split(" => ")
+       quality = Number(quality)
+      if(!juices.hasOwnProperty(name)) {
+        juices[name] = 0
+      } 
+      juices[name] += quality;
+      let currentQuantity = juices[name]
+      if(currentQuantity >= 1000) {
+        bottles[name] =  Math.trunc(currentQuantity / 1000)
+      }
+    
+   })
+
+   console.log(bottles)
+
+}
+
+console.log(
+   cappy(
+     [
+  'Orange => 2000',
+  'Peach => 1432',
+  'Banana => 450',
+  'Peach => 600',
+  'Strawberry => 549'
+]
+   )
+
+)
+
+->{Orange: 2, Peach: 2}
