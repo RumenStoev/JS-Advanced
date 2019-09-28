@@ -14,3 +14,17 @@ console.log(
 )
 
 ->20,40
+
+
+
+function solve(nums) {
+ return nums
+           .filter((_,x) => x % 2 === 0)
+           .join(" ")
+}
+
+console.log(
+  solve(['20','30','40'])
+)
+
+->20,40
