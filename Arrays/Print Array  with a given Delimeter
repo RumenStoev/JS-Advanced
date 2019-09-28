@@ -1,0 +1,11 @@
+function solve(ar) {
+  return ar.join(ar[ar.length-1])
+}
+
+
+console.log(
+  solve(["One",
+  "Two",
+  "Three","Four",
+  "Five","_"])
+)
