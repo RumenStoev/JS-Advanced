@@ -1,0 +1,37 @@
+function solve(arr) {
+   let juices = {};
+   let bottle = {};
+
+   for(let line of arr) {
+       let [name,quantity] = line.split(" => ")//return string
+       quantity = +quantity;
+
+
+       if(!juices.hasOwnProperty(name)) { //Check whether juices have a property
+           juices[name]= 0;
+       }
+       juices[name] += quantity  //Add name and quantity in object juices
+
+
+       if(juices[name] >=1000) {
+           bottle[name] = Math.trunc(juices[name] / 1000)
+       }
+
+   }
+
+   return bottle
+}
+
+  console.log(
+      solve([
+          'Orange => 2000',
+          'Peach => 1432',
+          'Banana => 450',
+          'Peach => 600',
+          'Strawberry => 549'
+      ])
+  )
+
+
+
+->{ Orange: 2, Peach: 2 }
