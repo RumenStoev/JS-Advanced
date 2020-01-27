@@ -1,5 +1,5 @@
 const {expect} = require("chai"); // Object
-const {solve,app,sum} = require("./index")
+const {solve,app,sum} = require("./app")
 
 
 describe("Test",() => {
