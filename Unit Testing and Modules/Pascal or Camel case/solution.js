@@ -22,14 +22,16 @@ let types = {
     }
 }
 
-
-
+//Refactoring!!!!
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 function tranformString(tranformation,str) {
    return `${str[0][tranformation]() + str.slice(1,str.length)}`
 }
 
 const upperFirstLetter = tranformString.bind(undefined,"toLocaleUpperCase");
 const lowerFirstLetter = tranformString.bind(undefined,"toLocaleLowerCase");
+
+
 const reduceString = string => string
     .toLocaleLowerCase()
     .split(" ")
