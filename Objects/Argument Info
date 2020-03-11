@@ -1,0 +1,27 @@
+function solve(...arr) {
+    let obj = {}
+    let result = 1;
+
+
+  for(let i = 0; i< arr.length; i++) {
+     if(!obj[typeof arr[i]]) {
+         console.log(`${typeof arr[i]} = ${result}`)
+     } else {
+         console.log(`${typeof arr[i]} = ${result++}`)
+     }
+
+     obj[typeof arr[i]] = `${arr[i]}`
+  }
+
+  return obj
+
+}
+
+console.log(
+    solve("cat", 42, function () { console.log("Hello world!") })
+);
+
+->string = 1
+number = 1
+function = 1
+{ string: 'cat', number: 42, function: [Function (anonymous)] }
