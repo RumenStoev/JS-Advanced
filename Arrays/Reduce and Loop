@@ -1,0 +1,20 @@
+const multiMap = (arrVals,arrCallbacks) => {
+  let result = {}
+  
+ for(let i = 0; i< arrVals.length; i++) {
+
+   result[arrVals[i]] = arrCallbacks.map(x => x(arrVals[i]));
+ }
+  return result 
+   
+}
+
+
+console.log(multiMap(['catfood', 'glue', 'beer'], [(str) => str.toUpperCase(), (str) => str[0].toUpperCase() + str.slice(1).toLowerCase(), (str) => str + str]));
+
+
+->{
+  catfood: [ 'CATFOOD', 'Catfood', 'catfoodcatfood' ],
+  glue: [ 'GLUE', 'Glue', 'glueglue' ],
+  beer: [ 'BEER', 'Beer', 'beerbeer' ]
+}
