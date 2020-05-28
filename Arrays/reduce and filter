@@ -1,12 +1,11 @@
+
 function union(arrays) {
- return arrays.reduce((acc,value) => {
-   let filterArr = acc.concat(value)
-      return filterArr.filter((x,i,selfs) => selfs.indexOf(x) === i)
- })
-}
-
-
- console.log(union([[5, 10, 15], [15, 88, 1, 5, 7], [100, 15, 10, 1, 5]]));
-// should log: [5, 10, 15, 88, 1, 7, 100]
-
-
+    return arrays.reduce((acc,value) => {
+     return acc.concat(value).filter((x,i,selfs) => selfs.indexOf(x) === i)
+    })
+   }
+   
+   
+    console.log(union([[5, 10, 15], [15, 88, 1, 5, 7], [100, 15, 10, 1, 5]]));
+    
+    -> [5, 10, 15, 88, 1, 7, 100]
