@@ -6,4 +6,4 @@ function solve(arr) {
 console.log(
     solve([3,0,10,4,7,3])
 )
-->0,3
+-> 0,3
