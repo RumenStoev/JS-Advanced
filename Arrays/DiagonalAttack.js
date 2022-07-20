@@ -1,14 +1,9 @@
-
 function diagonalAttack(arr) {
-    let result = [];
     let matrix = arr.map(str => str.split(" ").map(Number))
-
-    for (let i = 0; i < arr.length; i++) {
-        result[i] = []
-    }
     let checkEqualDiagonals = false;
     let sumDiagonals = 0;
-    let findSumDiagonals = (matrix) => matrix.reduce((acc, value, index, array) => {
+    
+    let findSumDiagonals = (matrix) => matrix.reduce((acc, value, index) => {
         acc[0] += value[index]
         acc[1] += value[value.length - index - 1]
         return acc
@@ -16,15 +11,12 @@ function diagonalAttack(arr) {
 
     checkEqualDiagonals = findSumDiagonals(matrix).every((num, i, arr) => (num === arr[0]))
     sumDiagonals = findSumDiagonals(matrix)[0];
+
     if (checkEqualDiagonals === true) {
-
-        matrix = matrix.reduce((acc, arr, index) => {
-            arr = arr.map((num, i) => (index !== i && i !== arr.length - index - 1) ? num = sumDiagonals : num)
-            acc.push(arr)
-            return acc;
-        }, [])
+        matrix = matrix.map((arr, row) => {
+            return arr = arr.map((num, i) => (row !== i && i !== arr.length - row - 1) ? num = sumDiagonals : num)
+        })
     }
-
     matrix.forEach((arr) => console.log(arr.join(" ")));
 }
 
