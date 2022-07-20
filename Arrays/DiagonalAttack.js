@@ -18,7 +18,7 @@ function diagonalAttack(arr) {
     sumDiagonals = findSumDiagonals(matrix)[0];
     if (checkEqualDiagonals === true) {
 
-        matrix = matrix.reduce((acc, arr, index, array) => {
+        matrix = matrix.reduce((acc, arr, index) => {
             arr = arr.map((num, i) => (index !== i && i !== arr.length - index - 1) ? num = sumDiagonals : num)
             acc.push(arr)
             return acc;
