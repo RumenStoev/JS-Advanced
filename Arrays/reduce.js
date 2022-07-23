@@ -1,9 +1,12 @@
+
+
+function solve(arr) {
+
 const actionMap = {
    true: "unshift",
    false: "push"
 }
 
-function solve(arr) {
   return arr
       .reduce((result,x)=> {
          result[
