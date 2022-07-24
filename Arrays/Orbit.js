@@ -1,8 +1,8 @@
 function Orbit(arr) {
     let start = arr[0];
     let end = arr[1];
-    let searchCoordinate = arr[2];
-   
+    let searchCoordinate1 = arr[2];
+    let searchCoordinate2 = arr[3];
     let matrix = [];
 
     for (let i = 0; i < arr[0]; i++) {
@@ -11,12 +11,12 @@ function Orbit(arr) {
 
     for (let row = 0; row < start; row++) {
         for (let column = 0; column < end; column++) {
-            
-            matrix[row][column] = Math.max(Math.abs(searchCoordinate - row),Math.abs(searchCoordinate -column)) + 1
+
+            matrix[row][column] = Math.max(Math.abs(searchCoordinate2 - column), Math.abs(searchCoordinate1 - row)) + 1
 
         }
     }
-        
+
     return matrix.forEach(x => console.log(x.join(" ")))
 }
 
