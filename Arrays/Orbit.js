@@ -12,7 +12,7 @@ function Orbit(arr) {
     for (let row = 0; row < start; row++) {
         for (let column = 0; column < end; column++) {
 
-            matrix[row][column] = Math.max(Math.abs(searchCoordinate2 - column), Math.abs(searchCoordinate1 - row)) + 1
+          matrix[row][column] = Math.max(Math.abs(searchCoordinate1 - row),Math.abs(searchCoordinate2 - column)) + 1
 
         }
     }
