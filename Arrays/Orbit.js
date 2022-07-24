@@ -24,6 +24,10 @@ console.log(
     Orbit([3, 3, 2, 2])
 )
 
+console.log(
+    Orbit([20, 1, 10, 0])
+)
+
 
 console.log(
     Orbit([4,4,0,0])
