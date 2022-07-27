@@ -1,7 +1,6 @@
-
 function createAssemblyLine() {
 
-    return {
+   return {
         hasClima: (object) => {
 
             object.temp = 21
@@ -9,14 +8,15 @@ function createAssemblyLine() {
             object.adjustTemp = function () {
                 return (this.temp < this.tempSettings) ? this.temp += 1 : this.temp -= 1
             }
-
         },
-        hasAudio: (object) => {
+       
+       hasAudio: (object) => {
             object.currentTrack = null,
                 object.nowPlaying = function ()  {
                 console.log(`Now playing '${this.currentTrack.name}' by ${this.currentTrack.artist}`)
             }
         },
+       
         hasParktronic: (object) => {
             object.checkDistance = function(num) {
 return (num < 0.1) ? console.log("Beep! Beep! Beep!"):(0.1 <= num && num < 0.25) ? console.log("Beep! Beep!") : (0.25 <= num && num < 0.5) ? console.log("Beep!") : ""
