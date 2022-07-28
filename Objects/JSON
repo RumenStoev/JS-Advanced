@@ -1,7 +1,0 @@
-{
-  "fullInformation" : [
-    { "name" : "John", "lastName" : "Doe"},
-    { "age" : 20, "city" : "Paris"},
-    { "job" : "pilot", "gender" : "male"}
-  ]
-}
