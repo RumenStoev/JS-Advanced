@@ -1,12 +1,10 @@
 function calorieObject(arr) {
-
     return arr.reduce((acc, value, index, array) => {
-       
         (index % 2 === 0) ? acc[value] : acc[array[index -1]] = +value;
-       
-      return acc
+        return acc
     }, {})
 }
+
 
 
 console.log(
