@@ -5,6 +5,7 @@ function createSortedList() {
   let sortedElements = () => list.sort((a,b) => a - b);
 
   let isValid = (param) => (param >= 0 && param < list.length && !isNaN(param)) ? true  : false;
+   
   let isError = () => { throw new Error("Has an Invalid Data")}
 
   let add = num =>  list.push(num)
