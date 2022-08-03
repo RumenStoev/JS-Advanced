@@ -1,4 +1,4 @@
-//???
+// 0 points of the tests????
 function search() {
   let listItems = document.getElementById("towns").children
   let searchField = document.getElementById("searchText").value
@@ -8,8 +8,8 @@ function search() {
   let isMatched = (a,input) => input.split("").every((x,i) => x === a.textContent.split("")[i]) 
  
   let changeState = a => {
-   a.style.textDecoration = " underline"
-   a.style.fontWeight = `bold`
+   a.style.textDecoration = "underline"
+   a.style.fontWeight = "bold"
    counter+=1
     
   }
