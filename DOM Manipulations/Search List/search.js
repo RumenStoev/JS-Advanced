@@ -10,7 +10,7 @@ function search() {
   let changeState = a => {
    a.style.textDecoration = " underline"
    a.style.fontWeight = `bold`
-   counter = searchField.length
+   counter+=1
     
   }
   let previousState = a =>  {
@@ -18,10 +18,9 @@ function search() {
     a.style.fontWeight = ""
   }
  
-  Array.from(listItems).filter(x => (isMatched(x,searchField) && searchField.length !== 0) ?  changeState(x) : previousState(x))
+  Array.from(listItems).filter(x => (isMatched(x,searchField) && searchField.length !== 0) ? changeState(x) : previousState(x))
   
   result.textContent = `${counter} matches found.`
  
  }
- 
 
