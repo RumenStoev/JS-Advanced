@@ -10,12 +10,15 @@ function solve() {
             option.text = text;
          selectMenuTo.appendChild(option);    
    }
+
     let convertFunction = {
     "binary": (num) =>  (Number(num) >>> 0).toString(2),
     "hexadecimal": (num) => (Number(num).toString(16)).toLocaleUpperCase()
     }
+   ////////Group of created Option tags//////////////////
    addOptionTags("binary","Binary");
    addOptionTags("hexadecimal","Hexadecimal");
+  /////////////////////////////////////////////////////// 
  
    button.addEventListener("click",function() {
     let clickedElement = selectMenuTo.value;
