@@ -1,22 +1,10 @@
 function validate() {
-    let input = document.getElementById("email")
-    input.addEventListener("keyup",function () {
-        let email = ""
-         Object.values(input.value).map(x => {
-             email+=x;
-         })
-        if(!email.includes("@")) {
-           input.className = "error"
+    let inputField = document.getElementById("email")
+    let validateRegEx = new RegExp('^[a-z]+@[a-z]+\.[a-z]+',"g");
+    let isValidEmail = (str,tag) => (validateRegEx.test(str)) ? tag.className = "" : tag.className = "error" 
+    inputField.addEventListener("change",function(event) {
 
-        }
+      isValidEmail(event.target.value,inputField);
+})
 
-        else {
-
-
-           input.className = "input"
-        }
-        if(input.value === "") {
-            input.className = "input"
-        }
-    })
-}
+   }
