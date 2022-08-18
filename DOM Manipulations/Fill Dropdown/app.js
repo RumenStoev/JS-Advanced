@@ -1,19 +1,26 @@
 function addItem() {
- let text = document.getElementById("newItemText")
- let valueText = document.getElementById("newItemValue")
-let menu = document.getElementById("menu")
-  let option = document.createElement("option");
-option.value = valueText.value;
-option.textContent = text.value;
-    menu.appendChild(option)
-   text.value = "";
-   valueText.value = "";
+    let menu = document.getElementById("menu");
+    let inputText = document.getElementById("newItemText")
+    let inputValue = document.getElementById("newItemValue")
+    
+    let clearInputFields = (option) => {
+        return option.forEach(element => {
+             element.value = ""
+        })    
+    }
+
+    let createOptionTag = (text,value) => {
+         let option = document.createElement("option");
+             option.textContent = text
+             option.value = value
+      
+         return option       
+    }
+
+    let appendOption = () => {
+        menu.appendChild(createOptionTag(inputText.value,inputValue.value))
+        clearInputFields([inputText,inputValue])
+    }
+    appendOption()
+   
 }
-
-
-
-document.addEventListener("DOMContentLoaded",function() {
-
-
-    document.getElementById("clickButton").addEventListener("click",addItem)
-})
