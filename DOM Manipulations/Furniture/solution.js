@@ -6,7 +6,7 @@ function solve() {
   let generateButton = document.querySelector("#exercise > button:nth-child(3)")
   let buyButton = document.querySelector("#exercise > button:nth-child(6)")
   let buyTextArea = document.querySelector("#exercise > textarea:nth-child(5)")
-  let container = [];
+  let containerNames = [];
   ///////// Buttons ///////////////////////////////////////////////////////////
   generateButton.addEventListener("click",function() {
   JSON.parse(generateInput.value).forEach((element,index) => {
@@ -27,13 +27,13 @@ function solve() {
               name = name.children[0].textContent
               price = +price.children[0].textContent
               factor = +factor.children[0].textContent
-             if (!container.includes(name))  container.push(name) 
-             priceProduct+=price;
-             factorProduct+=factor    
+            if (!containerNames.includes(name))  containerNames.push(name) 
+              priceProduct+=price;
+              factorProduct+=factor    
           }       
         })
        
-       buyTextArea.value = templateOutput(container,priceProduct,factorProduct) 
+       buyTextArea.value = templateOutput(containerNames,priceProduct,factorProduct) 
   }) 
 ////////////////////////////////////////////////////////////////////////////////  
   let renderCells = (obj,row) => {
