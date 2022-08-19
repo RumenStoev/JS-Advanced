@@ -1,5 +1,5 @@
 !!!Tests - 25%
-
+  
 function solve() {
   let generateInput = document.querySelector("#exercise > textarea")
   let table = document.getElementsByClassName("table")[0]
@@ -7,7 +7,7 @@ function solve() {
   let buyButton = document.querySelector("#exercise > button:nth-child(6)")
   let buyTextArea = document.querySelector("#exercise > textarea:nth-child(5)")
   let container = [];
-  
+  ///////// Buttons ///////////////////////////////////////////////////////////
   generateButton.addEventListener("click",function() {
   JSON.parse(generateInput.value).forEach((element,index) => {
         //New row starts from 2 
@@ -35,6 +35,7 @@ function solve() {
        
        buyTextArea.value = templateOutput(container,priceProduct,factorProduct) 
   }) 
+////////////////////////////////////////////////////////////////////////////////  
   let renderCells = (obj,row) => {
        let img = document.createElement("img")
        img.setAttribute("src",`${obj["img"]}`)
@@ -49,4 +50,5 @@ function solve() {
  let templateOutput = (names,totalPrice,factor) =>  {
      return `Bought furniture: ${names.join(", ")}\nTotal price: ${totalPrice.toFixed(2)}\nAverage decoration factor: ${factor / names.length}`
  }
+ 
 }
