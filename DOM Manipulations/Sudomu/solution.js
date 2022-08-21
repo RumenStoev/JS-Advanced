@@ -64,9 +64,7 @@ function solve() {
         }
         (isEqualNumbers(columnNumbers).length > 0) ? isEqual = true : isEqual = false
         columnNumbers = [];
-      }
-      console.log(isEqual)
+      } 
       return isEqual
   }
-
 }
