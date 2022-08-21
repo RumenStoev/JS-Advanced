@@ -3,7 +3,7 @@ function solve() {
    let [quickCheckButton,clearButton]= document.querySelectorAll("button")
    let inputCells = document.querySelectorAll("input")
    let divResult = document.querySelector("#check > p")
-   
+  
    let matrixSUDOMU = () => {
       let matrix = [[],[],[]]
       let row = 0;
@@ -18,35 +18,27 @@ function solve() {
        })
        return matrix;
    }
-   
-/////////////////////////////////////State of buttons/////////////////////////
-    quickCheckButton.addEventListener("click",function() {
-        let sudomu = matrixSUDOMU()
+   let changeStatesTableAndParagraph = (border,color,text) => {
+        table.style.border = border;
+        divResult.style.color = color;
+        divResult.textContent = text
+   }
+/////////////////////////////////////State of Buttons/////////////////////////
+  quickCheckButton.addEventListener("click",function() {
+    let sudomu = matrixSUDOMU()
        for(let i = 0; i< sudomu.length; i++) {
-          if (isEqualNumbers(sudomu[i]).length > 0 || isEqualNumbersColumn(sudomu)) {
-              table.style.border = "2px solid red"
-              divResult.style.color = "red"
-              divResult.textContent = "NOP! You are not done yet..." 
-        }else {
-             table.style.border = "2px solid green"
-             divResult.style.color = "green"
-             divResult.textContent ="You solve it! Congratulations!"
-             }  
-       }
+        (isEqualNumbers(sudomu[i]).length > 0 || isEqualNumbersColumn(sudomu)) ? changeStatesTableAndParagraph("2px solid red","red","NOP! You are not done yet..." )
+                                                                               : changeStatesTableAndParagraph("2px solid green", "green","You solve it! Congratulations!")
+        } 
     })
    
-    clearButton.addEventListener("click",function() {
-     clearStateTable()
+  clearButton.addEventListener("click",function() {
+      clearStateTable()
   })
 /////////////////////////////////////////////////////////////////////////////
   let clearStateTable = () => {
-      Array.from(inputCells).forEach(input => {
-        input.value = ""
-      })
-      
-      table.style.border = ""
-      divResult.style.color = ""
-      divResult.textContent = "" 
+      Array.from(inputCells).forEach(input => input.value = "")
+      changeStatesTableAndParagraph("","","")
   }
 
   let isEqualNumbers = (arr) => {
@@ -54,17 +46,18 @@ function solve() {
   }
   
   let isEqualNumbersColumn = (arr) => {
-    let matrix = arr
+    let table = arr
     let columnNumbers = [];
     let isEqual = false;
        
-      for(let row = 0; row< matrix.length; row++) {
-        for(let column = 0 ; column < matrix[row].length; column++) {
-            columnNumbers.push(matrix[column][row])
+      for(let row = 0; row < table.length; row++) {
+        for(let column = 0 ; column < table[row].length; column++) {
+            columnNumbers.push(table[column][row])
         }
         (isEqualNumbers(columnNumbers).length > 0) ? isEqual = true : isEqual = false
         columnNumbers = [];
-      } 
+      }
+       
       return isEqual
   }
 }
