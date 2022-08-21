@@ -2,83 +2,76 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="template.css">
-    <title>JAVASCRIPT QUIZZ</title>
-    <script src="./solution.js"></script>
+	<link rel="stylesheet" href="template.css">
+	<title>SUDOMU</title>
 </head>
 
 <body>
-    <div id="quizzie">
-        <h1>JavaScript Quiz</h1>
+	<div id="container">
+		<main id="main">
+			<div id="exercise">
+				<table>
+					<thead>
+						<tr>
+							<th colspan="9">SUDOMU</th>
+						</tr>
+					</thead>
+					<tfoot>
+						<tr>
+							<td colspan="3">
+								<button>Quick Check</button>
+								<button>Clear</button>
+							</td>
+						</tr>
+					</tfoot>
+					<tbody>
+						<tr>
+							<td>
+								<input min="1" max="3" type="number" />
+							</td>
+							<td>
+								<input min="1" max="3" type="number" />
+							</td>
+							<td>
+								<input min="1" max="3" type="number" />
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<input min="1" max="3" type="number" />
+							</td>
+							<td>
+								<input min="1" max="3" type="number" />
+							</td>
+							<td>
+								<input min="1" max="3" type="number" />
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<input min="1" max="3" type="number" />
+							</td>
+							<td>
+								<input min="1" max="3" type="number" />
+							</td>
+							<td>
+								<input min="1" max="3" type="number" />
+							</td>
+						</tr>
 
-        <section>
-            <ul class="quiz-step step1 current">
-                <li class="question">
-                    <div class="question-wrap">
-                        <h2>Question #1: Which event occurs when the user clicks on an HTML element?</h2>
-                    </div>
-                </li>
-                <li class="quiz-answer low-value" data-quizIndex="2">
-                    <div class="answer-wrap">
-                        <p class="answer-text">onclick</p>
-                    </div>
-                </li>
-                <li class="quiz-answer high-value" data-quizIndex="4">
-                    <div class="answer-wrap">
-                        <p class="answer-text">onmouseclick</p>
-                    </div>
-                </li>
-            </ul>
-        </section>
-        <section class="hidden">
-            <ul class="quiz-step step1 current">
-                <li class="question">
-                    <div class="question-wrap">
-                        <h2>Question #2: Which function converting JSON to string?</h2>
-                    </div>
-                </li>
-                <li class="quiz-answer low-value" data-quizIndex="2">
-                    <div class="answer-wrap">
-                        <p class="answer-text">JSON.toString()</p>
-                    </div>
-                </li>
-                <li class="quiz-answer high-value" data-quizIndex="4">
-                    <div class="answer-wrap">
-                        <p class="answer-text">JSON.stringify()</p>
-                    </div>
-                </li>
-            </ul>
-        </section>
-        <section class="hidden">
-            <ul class="quiz-step step1 current">
-                <li class="question">
-                    <div class="question-wrap">
-                        <h2>Question #3: What is DOM?</h2>
-                    </div>
-                </li>
-                <li class="quiz-answer low-value" data-quizIndex="2">
-                    <div class="answer-wrap">
-                        <p class="answer-text">A programming API for HTML and XML documents</p>
-                    </div>
-                </li>
-                <li class="quiz-answer high-value" data-quizIndex="4">
-                    <div class="answer-wrap">
-                        <p class="answer-text">The DOM is your source HTML</p>
-                    </div>
-                </li>
-            </ul>
-        </section>
-        <ul id="results">
-            <li class="results-inner">
-                <h1></h1>
-            </li>
-        </ul>
-    </div>
-    </main>
-    </div>
-    <script>
-        solve();
-    </script>
+					</tbody>
+				</table>
+				<div id="check">
+					<p></p>
+				</div>
+			</div>
+		</main>
+	</div>
+
+	<script src="./solution.js"></script>
+	<script>
+	solve();
+	</script>
 </body>
 
 </html>
