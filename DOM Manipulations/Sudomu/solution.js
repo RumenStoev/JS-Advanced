@@ -23,10 +23,10 @@ function solve() {
     quickCheckButton.addEventListener("click",function() {
         let sudomu = matrixSUDOMU()
        for(let i = 0; i< sudomu.length; i++) {
-       if (isEqualNumbers(sudomu[i]).length > 0 || isEqualNumbersColumn(sudomu)) {
-         table.style.border = "2px solid red"
-         divResult.style.color = "red"
-         divResult.textContent = "NOP! You are not done yet..." 
+          if (isEqualNumbers(sudomu[i]).length > 0 || isEqualNumbersColumn(sudomu)) {
+              table.style.border = "2px solid red"
+              divResult.style.color = "red"
+              divResult.textContent = "NOP! You are not done yet..." 
         }else {
              table.style.border = "2px solid green"
              divResult.style.color = "green"
