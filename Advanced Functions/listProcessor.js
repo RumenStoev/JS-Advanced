@@ -1,20 +1,20 @@
 function listProcessor(array) { 
-   let data = array;
-   let result = [];
-   let commands = {
-    "add":(arr,str) => arr.push(str),
-    "remove":(arr,str) => arr.forEach(item => (arr.includes(item)) ? arr.splice(arr.indexOf(str),1) : false),
-    "print":(arr,str) => console.log(arr.join(","))
-
-   }
-
-      data.forEach(str => {
-        let [command, value] = str.split(" ")
-          commands[command](result,value)
-
-      });
-}
-
+    let data = array;
+    let result = [];
+    let commands = {
+     "add":(str) => result.push(str),
+     "remove":(str) => result = result.filter(item => item !== str),
+     "print":(str) => console.log(result.join(","))
+ 
+    }
+ 
+       data.forEach(str => {
+         let [command, value] = str.split(" ")
+           commands[command](value)
+ 
+       });
+ }
+ 
 
 console.log(
     listProcessor(['add hello', 'add again', 'remove hello', 'add again', 'print'])
