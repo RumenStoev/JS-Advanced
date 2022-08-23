@@ -1,11 +1,13 @@
 function getFibonator() {
-  let a = 1,b = 0,result;
-  return () => {
-    result = a;
-    a = a + b;
-    b = result
-    return b
-  }
+ let a = 1;
+ let b = 0;
+ let result = 0;
+ return () => {
+   result = a;
+   a = a + b;
+   b = result
+   return b
+ }
 
 }
 
