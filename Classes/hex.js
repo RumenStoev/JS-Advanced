@@ -14,7 +14,8 @@ class Hex {
     }
 
     plus(object) {
-       
+//      this.value = this.value - object.value
+//         return this;
      let result = this.value + object.value
      
      return new Hex(result)
