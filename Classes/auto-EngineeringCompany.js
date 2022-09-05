@@ -4,27 +4,24 @@ function auto(arr) {
   
    inputData.reduce((acc,value) => {
     let [car,model,number] = value.split(" | ");
-    number = Number(number);
-      if(acc[car] === undefined) {
-        acc[car] = {};
-      }
-         if(!acc[car].hasOwnProperty(model)) {
-            acc[car][model] = number
-         }else{
-            acc[car][model] += number
-         }
+    
+      number = Number(number);
+
+      acc[car] = acc[car] || {}
       
+      acc[car][model] = acc[car][model] || 0
+         
+      acc[car][model] += number
+         
       return acc;
-   
+        
   },result)
   
   return Object.entries(result).forEach(([prop,value]) => {
        let carsData = Object.entries(value).map(x => `${x[0]} -> ${x[1]}` )
        console.log(prop);
-       console.log(
-        `###${carsData.join("\n###")}`
-       )
-    
+       console.log(`###${carsData.join("\n###")}`
+       ) 
   })
 
 }
