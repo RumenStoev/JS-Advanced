@@ -46,3 +46,14 @@ console.log(ribbon);
 
 
 let test = new classes.Balloon("Tumno-bqlo", 20.5);
+
+
+Balloon { color: 'yellow', hasWeight: 20.5 }
+PartyBalloon {
+  color: 'yellow',
+  hasWeight: 20.5,
+  ribbonColor: 'red',
+  ribbonLength: 10.25,
+  _ribbon: { color: 'red', length: 10.25 }
+}
+{ color: 'red', length: 10.25 }
